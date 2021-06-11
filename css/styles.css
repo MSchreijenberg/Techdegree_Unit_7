@@ -12,27 +12,32 @@
     "main";
     background-color: rgb(233, 232, 232);
     margin: auto;
-    font-family: Arial, Helvetica, sans-serif;
+    font-family: 'Roboto', sans-serif;
     justify-content: center;    
 }
 
 /* Headerstyling */
 header{
     grid-area: header;
+    width: 100%;
     background-color: rgb(112, 127, 194);
-    display: grid;
-    grid-template-columns: repeat(4, 1fr);
-    gap: 10px;
-    justify-content: space-between;  
-    align-items: center; 
-    margin: auto;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;     
     padding: 10px;
     color: white;
-    width: 100%;
+    
 }
 
 h1{
-    font-size: 1.2em;
+    flex-basis: 30%;
+    font-size: 18px;
+    font-weight: 300;
+}
+
+h1 strong{
+    font-weight: 600;
 }
 
 h1 sup{
@@ -40,23 +45,23 @@ h1 sup{
 }
 
 .notifications{
-    margin-left: auto;
+    margin: 0px 10px ;
+    padding: 10px;
+    border-right: 1px  rgb(146, 146, 146) solid;
 
 }
 
-header h3{
-    font-family: Arial, Helvetica, sans-serif;
-    font-weight: 100;
-    font-style: normal;
-    font-size: 12px;    
+.student-name{   
+    font-size: 14px;
+    font-weight: 400;
+    text-align: center;
 }
 
 .bell-icon{
     fill:white;
-    width: 30px;
-    height: auto;
-    margin-left: auto;
-}
+    width: 22px;
+   }
+
 
 
 
@@ -64,33 +69,77 @@ header h3{
 nav{
     grid-area: nav;
     background-color: rgb(58, 67, 107);   
-    padding: 20px 40px;
-    display: grid;
-    grid-template-columns: repeat(4, 1fr);
-    gap: 30px
-       
+    display: flex;
+    flex-direction: row;
+    justify-content: center;  
+}
+
+.icon{
+    width: 35px;
+    height: 35px;
+    margin: 10px;
 }
 
 
-
-h3{
-    font-size: 12px;
-}
+/* main styling */
 
 main{
     grid-area: main;
+    display: grid;
+    grid-template-columns: 100%;
+    grid-template-rows: auto;
     background-color: white;
     margin: 0;
+    
 }
 
+.main-header{
+    grid-area: 1 / 1;
+    display: flex;    
+    flex-direction: row;  
+    justify-content: flex-start;
+
+}
+
+h2{
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 18px;
+    font-weight: lighter;
+    background-color: white;
+    padding: 10px;
+    margin: 2px;
+    flex: 1;
+}
+
+.main-header-search{
+    background-color: rgb(233, 232, 232);
+    border-bottom:1px rgb(173, 172, 172) solid;
+    border-left:1px rgb(173, 172, 172) solid; 
+    flex: 2;
+}
+
+main h3{
+    font-size: 12px;
+    text-transform: uppercase;
+}
+
+/* section styling */
 section{
     padding: 10px;
     border-bottom: .1px rgb(235, 235, 235) solid;
     margin: 5px;
 }
 
+.widget-container{
+    display: flex;
+    flex-direction: column;
+}
 
 
+
+
+
+/* socials */
 .social-container{
     display: flex;
     flex-direction: row;
@@ -98,42 +147,68 @@ section{
     background-color: rgb(241, 239, 239);
     border-radius: 5px;
     border: 1px solid grey;
-    padding: 15px;
-    margin: 15px;
+    padding: 1em;
+    margin: 1em;
     }
 
-.social-container svg{
-    fill: rgb(112, 127, 194);
-    height: 100%;
-   
+
+.social-image{
+    width: 70px;
+    height: 70px;
+    padding: 15px;
+    background-color: rgb(112, 127, 194);
+    fill: rgb(241, 239, 239);
+    border-radius: 50%;
+    border: 5px;
 }
 
-.social-image,
 .social-text{
-    text-align: center;
-    margin: .5em;
+    text-align: left;   
+    margin: 5px; 
+    }
+
+.social-text p:first-child{
+    color: rgb(112, 127, 194);
+    font-weight: bold;
+    margin: 1px;
+}
+
+.social-text p:last-child{
+    color: grey;
+    font-size: 30px;
+    margin: 1px;
 }
 
 
 
-
-
-
-
-
-.member-container{
+/* members */
+.member-container, 
+.member-activity{
     display: flex;
     flex-direction: column;
     align-items: center;
-    margin: auto;
     padding: 1em;
-    border-bottom: 1px rgb(211, 210, 210) solid;;
+    border-bottom: 1px rgb(211, 210, 210) solid;
 }
 
-.member-text{
-    align-self: center;
-}
+.members-text{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    font-size: 14px;
+    
+  }
+  .members-text >*{
+      margin: 2px;
+      text-align: center;
+  }
+  p{
+    font-size: 14px; 
+    margin: 0;
+  }
 
+
+/* images of members */
 .profile-img,
 .profile-img-top{
     border-radius: 50%;
@@ -141,11 +216,88 @@ section{
 }
 
 .profile-img-top{
-    height: 50px;
-    width: auto;
+    height: 40px;
+    width: 40px;
+    margin: 5px;
 }
 
+.profile-img{
+    height: 60px;
+    width: 60px;
+}
 
+/* Buttons */
+
+
+
+/* Message */
+.form-area,
+.form-field{
+    margin-bottom: 10px;
+    background-color:rgb(233, 232, 232);
+    border-radius: 5px;
+    border: 1px rgb(204, 201, 201) solid;
+    padding: 1em;
+    font-size: 14px;
+    color:  rgb(204, 201, 201);  
+    width: 100%;  
+}
+
+.form-area{
+    height: 120px;
+}
+
+/* settings */
+
+
+.switches{
+    display: flex;
+    flex-direction: column;
+    margin: 10px 0px 50px;
+
+}
+.settings-button{
+    display: flex;
+    justify-content: space-between;
+    margin: 10px 0px;
+}
+
+.switch-light{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: 30px;
+    
+    
+}
+
+label span{
+    border: 2px grey solid;
+    border: 5px;
+}
+
+label strong{
+    flex-basis: 75%;
+}
+
+.button-primary,
+.button-disabled{
+    background-color: rgb(112, 127, 194);
+    color:rgb(243, 241, 241);
+    padding: 20px;
+    width: 100%;
+    border-radius: 5px;
+    border: 1px rgb(243, 241, 241) solid;
+    flex-basis: 47%;
+    text-transform: uppercase;
+}
+
+.button-disabled{
+    background-color: rgb(173, 172, 172);
+}
+
+/* media queries */
 
 @media(min-width: 768px){
     .grid-container{
@@ -154,15 +306,65 @@ section{
             "header header"
             "nav main";
     }
+
+    h1{
+        flex-basis: 70%;
+    }
+    nav{
+        flex-direction: column;
+        justify-content: left;
+    }
+
     main{
         grid-template-columns: 50%;
     }
+
+    main section{
+        grid-column: 1 /span 2 ;
+    }
+
+    .daily
+    {
+        grid-column: 1 / span 1;
+    }
+
+    .mobile
+    {
+        grid-column: 2 / span 1;
+    }
+
+    nav{
+        grid-template-columns: 1fr;
+        grid-template-rows: auto;
+    }
+  
+
+   
+
 }
 
 @media(min-width: 1024px){
     main{
         grid-template-columns: 1fr;
     }
+    .main-header,
+    .traffic{
+        grid-column: 1 / span 2;
+    }
+
+    .daily,
+    .members,
+    .message{
+        grid-column: 1/ span 1;
+    }
+
+    .mobile,
+    .activity,
+    .settings{
+        grid-column: 2/ span 1;
+    }
+
+    
 }
 
 /* SVG-styling */
