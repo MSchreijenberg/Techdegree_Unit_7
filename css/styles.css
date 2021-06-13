@@ -324,6 +324,12 @@ label strong{
     width: 125px;
 }
 
+/* widget containers */
+
+canvas{
+    max-width: 100%;
+}
+
 /* media queries */
 
 @media(min-width: 768px){
@@ -333,7 +339,6 @@ label strong{
             "header header"
             "nav main";
     }
-
     h1{
         flex-basis: 70%;
     }
@@ -346,12 +351,12 @@ label strong{
         grid-template-columns: 50%;
     }
 
-    main section{
-        grid-column: 1 /span 2 ;
+    section{
+        grid-column: 1 / span 2;
     }
 
     .main-header{
-        grid-column: 1/span 2;
+        grid-column: 1 /span 2;
     }
 
     .main-header-search{
@@ -411,13 +416,13 @@ label strong{
     .daily,
     .members,
     .message{
-        grid-column: 1/ span 1;
+        grid-column: 1 / span 1;
     }
 
     .mobile,
     .activity,
     .settings{
-        grid-column: 2/ span 1;
+        grid-column: 2 / span 1;
     }
 
     
