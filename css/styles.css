@@ -69,15 +69,51 @@ h1 sup{
     margin: 0px 6px;
 }
 
+@keyframes rinkle{
+    0%{
+        transform: rotate(0deg);
+    }
+    25%{
+        transform: rotate(45deg);
+    }
+    50%{
+        transform: rotate(0deg);
+    }
+    75%{
+        transform: rotate(-45deg);
+    }
+}
 .bell-icon{
     fill:white;
     width: 22px;
+    transform-origin: 50% 50%;
    }
 
+   .notifications:hover, .alert-banner{
+       cursor: pointer;
+   }
 
+    .bell-icon:hover{
+    animation: rinkle .5s ease-in;
+   }
 
+   #popup{
+     position: absolute;
+     right: 100px;
+     z-index: 1;
+     background-color: rgba(116, 119, 191, .8);
+     width: 250px;
+   }
 
-/* navigation styling */
+   .popup-message{
+       display: flex;
+       flex-direction: row;
+       justify-content: space-between;
+       padding: 8px;
+       margin: 8px;
+   }
+
+   /* navigation styling */
 nav{
     grid-area: nav;
     background-color: rgb(58, 67, 107);   
@@ -121,8 +157,7 @@ a{
 .alert{
     background-color: rgb(112, 127, 194);
     margin: 8px;
-    color: white;
-    
+    color: white;    
     grid-column: 1 / span 1;
     border-radius: 5px;
 }
