@@ -23,7 +23,7 @@ header{
     background-color: rgb(112, 127, 194);
     display: flex;
     flex-direction: row;
-    justify-content: space-between;
+    justify-content: flex-start;
     align-items: center;     
     padding: 10px;
     color: white;
@@ -31,7 +31,7 @@ header{
 }
 
 h1{
-    flex-basis: 30%;
+    flex-basis: 35%;
     font-size: 18px;
     font-weight: 300;
 }
@@ -45,16 +45,28 @@ h1 sup{
 }
 
 .notifications{
-    margin: 0px 10px ;
+ 
     padding: 10px;
     border-right: 1px  rgb(146, 146, 146) solid;
 
 }
 
+.dot{
+    height: 6px;
+    width: 6px;
+    background-color: rgb(145, 212, 145);
+    border-radius: 50%;
+    position: relative;
+    top: -30px;
+    left: 20px;
+
+}
+
 .student-name{   
     font-size: 14px;
-    font-weight: 400;
+    font-weight: 300;
     text-align: center;
+    margin: 0px 6px;
 }
 
 .bell-icon{
@@ -130,9 +142,9 @@ main h3{
 
 /* section styling */
 section{
-    padding: 5px;
+    padding: 12px;
     border-bottom: .1px rgb(235, 235, 235) solid;
-    margin: 0px 8px;
+    /* margin: 0px 8px; */
 }
 
 .widget-container{
@@ -218,8 +230,13 @@ section{
     display: flex;
     flex-direction: column;
     align-items: center;
-    padding: 1em;
+    padding: 8px;
     border-bottom: 1px rgb(211, 210, 210) solid;
+    
+}
+
+.member-activity:last-child, .member-container:last-child{
+    border-bottom: none;
 }
 
 .members-text{
@@ -227,6 +244,7 @@ section{
     flex-direction: column;
     align-items: center;
     font-size: 14px;
+    padding: 2px 10px;
     
   }
   .members-text >*{
@@ -236,6 +254,10 @@ section{
   p{
     font-size: 14px; 
     margin: 0;
+  }
+
+  .arrow{
+      display: none;
   }
 
 
@@ -257,9 +279,15 @@ section{
 }
 
 /* Message */
+
+.message, .settings{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+}
 .form-area,
 .form-field{
-    margin-bottom: 10px;
+    margin-bottom: 1em;
     background-color:rgb(233, 232, 232);
     border-radius: 5px;
     border: 1px rgb(204, 201, 201) solid;
@@ -270,7 +298,7 @@ section{
 }
 
 .form-area{
-    height: 120px;
+    height: 150px;
 }
 
 /* settings */
@@ -278,13 +306,14 @@ section{
 .switches{
     display: flex;
     flex-direction: column;
-    margin: 10px 0px 50px;
+    justify-content: space-around;
+    margin: 10px 0px 30px;
 
 }
 .settings-button{
     display: flex;
     justify-content: space-between;
-    margin: 10px 0px;
+ 
 }
 
 .switch-light{
@@ -335,12 +364,13 @@ canvas{
 @media(min-width: 768px){
     .grid-container{
         grid-template-columns: 55px 1fr;
+        grid-template-rows: auto;
         grid-template-areas: 
             "header header"
             "nav main";
     }
     h1{
-        flex-basis: 70%;
+        flex-basis: 72%;
     }
     nav{
         flex-direction: column;
@@ -370,6 +400,7 @@ canvas{
     .daily
     {
         grid-column: 1 / span 1;
+        border-right: .1px rgb(235, 235, 235) solid;
     }
 
     .mobile
@@ -393,24 +424,39 @@ canvas{
     .member-container, 
     .member-activity{
     flex-direction: row;
-    justify-content: space-between;
+    justify-content: flex-start;
+    height: 80px;
     }  
     .members-text{
         flex-basis: 75%;
-        text-align: left;
+        align-items: flex-start;
     }
-  
-  
+
+    .member-container :nth-child(3){
+        margin-left: auto;
+    }
+
+    .arrow{
+        display: block;
+        color:rgb(112, 127, 194);
+        font-size: 20px;
+        margin-left: auto;
+    }
+    .members-text >*{
+     text-align: left;
+    }
 
 }
 
 @media(min-width: 1024px){
-    main{
-        grid-template-columns: 1fr;
-    }
+   
     .main-header,
     .traffic{
         grid-column: 1 / span 2;
+    }
+
+    h1{
+        flex-basis: 80%;
     }
 
     .daily,
@@ -420,13 +466,18 @@ canvas{
     }
 
     .mobile,
-    .activity,
+    .recent-activity,
     .settings{
         grid-column: 2 / span 1;
     }
 
-    
+    .members, .message{
+        border-right: .1px rgb(235, 235, 235) solid;
+    }
 }
+
+    
+
 
 /* SVG-styling */
 
