@@ -118,6 +118,24 @@ a{
 
 }
 
+.alert{
+    background-color: rgb(112, 127, 194);
+    margin: 8px;
+    color: white;
+    
+    grid-column: 1 / span 1;
+    border-radius: 5px;
+}
+
+.alert-banner{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    padding: 1em;
+    font-weight: 100;
+       
+}
+
 h2{
     font-family: Arial, Helvetica, sans-serif;
     font-size: 18px;
@@ -381,12 +399,8 @@ canvas{
         grid-template-columns: 50%;
     }
 
-    section{
+    section, .main-header, .alert{
         grid-column: 1 / span 2;
-    }
-
-    .main-header{
-        grid-column: 1 /span 2;
     }
 
     .main-header-search{
