@@ -50,10 +50,10 @@
                 <div class="traffic-header">
                     <h3>Traffic</h3>
                     <ul class="traffic-nav">
-                        <li class="traffic-nav-link">Hourly</li>
-                        <li class="traffic-nav-link">Daily</li>
-                        <li class="traffic-nav-link active">Weekly</li>
-                        <li class="traffic-nav-link">Monthly</li>
+                        <li class="traffic-nav-link" id="hourly">Hourly</li>
+                        <li class="traffic-nav-link" id="daily">Daily</li>
+                        <li class="traffic-nav-link active" id="weekly">Weekly</li>
+                        <li class="traffic-nav-link" id="monthly">Monthly</li>
                     </ul>
                 </div>
                 <div class="widget-container-full">
@@ -188,8 +188,15 @@
 
             <section class="message">
                 <h3>Message User</h3>
-                <form class="widget-container">
-                    <input type="text" placeholder="Search for user" class="form-field" id="userField">
+                <form class="widget-container" id="form">
+                    <input list="users" placeholder="Search for user" class="form-field" id="userField">
+                    <datalist id="users">
+                        <option value="Dawn"></option>
+                        <option value="Dale"></option>
+                        <option value="Dan"></option>
+                        <option value="Victoria"></option>
+                    </datalist>
+                    
                     <textarea placeholder="Message for user" class="form-area" id="messageField"></textarea>
                     <button class="button-primary" id="send">Send</button>
                 </form>
@@ -199,7 +206,7 @@
                 <h3>Settings</h3>
                 <div class="switches">
                     <label class="switch-light switch-ios" onclick="">
-                        <input type="checkbox">                  
+                        <input type="checkbox" id="emailSettings">                  
                         <strong>Send Email Notifications</strong>                  
                         <span>
                         <span>OFF</span>
@@ -207,22 +214,22 @@
                         <a></a>
                         </span>
                     </label>
-                    <label class="switch-light switch-ios" onclick="">
-                        <input type="checkbox">                  
+                    <label class="switch-light switch-ios" onclick="" >
+                        <input type="checkbox" id="publicSettings">                  
                         <strong>Set Profile to Public</strong>                  
                         <span>
                         <span>OFF</span>
-                        <span class="slider">ON</span>
+                        <span>ON</span>
                         <a></a>
                         </span>
                     </label>
             </div>
             
                 <select class="form-field" id="timezone">
-                    <option disabled selected>Select a Timezone</option>
-                    <option value="Eastern standard time">Eastern Standard Time</option>
-                    <option value="Eastern standard time">Eastern Standard Time</option>
-                    <option value="Eastern standard time">Eastern Standard Time</option>
+                    <option disabled selected value="default">Select a Timezone</option>
+                    <option value="EST">Eastern Standard Time</option>
+                    <option value="CST">Central Standard Time</option>
+                    <option value="PST">Pacific Standard Time</option>
                 </select>
                 <div class="settings-button">
                     <button class="button-primary" id="save">SAVE</button>

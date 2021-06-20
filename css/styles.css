@@ -26,8 +26,7 @@ header{
     justify-content: flex-start;
     align-items: center;     
     padding: 10px;
-    color: white;
-    
+    color: white;    
 }
 
 h1{
@@ -44,11 +43,9 @@ h1 sup{
     font-size: 8px;
 }
 
-.notifications{
- 
+.notifications{ 
     padding: 10px;
     border-right: 1px  rgb(146, 146, 146) solid;
-
 }
 
 .dot{
@@ -59,7 +56,6 @@ h1 sup{
     position: relative;
     top: -30px;
     left: 20px;
-
 }
 
 .student-name{   
@@ -83,6 +79,7 @@ h1 sup{
         transform: rotate(-45deg);
     }
 }
+
 .bell-icon{
     fill:white;
     width: 22px;
@@ -99,7 +96,7 @@ h1 sup{
 
    #popup{
      position: absolute;
-     right: 100px;
+     right: 20px;
      z-index: 1;
      background-color: rgba(116, 119, 191, .8);
      width: 250px;
@@ -228,8 +225,6 @@ section{
     padding: 10px;
 }
 
-
-
 /* socials */
 
 .social{
@@ -274,8 +269,6 @@ section{
     font-size: 30px;
     margin: 1px;
 }
-
-
 
 /* members */
 .member-container, 
@@ -346,7 +339,7 @@ section{
     border: 1px rgb(204, 201, 201) solid;
     padding: 1em;
     font-size: 14px;
-    color:  rgb(204, 201, 201);  
+    color:  rgb(112, 112, 112);  
     width: 100%;  
 }
 
