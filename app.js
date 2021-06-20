@@ -118,8 +118,14 @@ const cancelButton = document.getElementById("cancel");
 
 //set default settings
 if(localStorage.length != 0){
-   emailCheckbox.checked = localStorage.getItem('emailNotificationsOn');
-   publicCheckbox.checked = localStorage.getItem('profilePublic');
+    localStorage.getItem('emailNotificationsOn') === "false"?
+        emailCheckbox.checked = false:
+        emailCheckbox.checked = true;
+    
+    localStorage.getItem('profilePublic') === "false"?
+        publicCheckbox.checked = false:
+        publicCheckbox.checked = true;
+   
    timeZone.value = localStorage.timeZone    
 }
 
